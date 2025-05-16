@@ -8,28 +8,34 @@ import localData from './data/localData.js';
 
 
 function App() {
+  // state for fetched data
   const [data, setData] = useState([]);
-  
-
+  // state for saved countries; going to be passed down to the saved countries page via props
+  const [savedCountries, setSavedCountries] = useState([]);
+// asynchronous api call
 useEffect(() => {
-  const fetchData = async () => {
+  async function fetchData() {
     try {
       const response = await fetch('https://restcountries.com/v3.1/all');
-      const json = await response.json();
-      console.log(json, 'data');
-      setData(json)
-      console.log(data, 'test')
-  } catch (error) {
-      console.error("Error fetching data:", error);
-  
+      const responseJson = await response.json();
+      console.log(responseJson); 
+      setData(responseJson); 
+    } catch (error) {
+      console.error('Error fetching countries:', error);
+      setData(localData);
+    }
   }
-};
-fetchData();
-}, [])
+  fetchData();
+}, []);
 
+// updated data after updating state
+useEffect(() => {
+  console.log(data, 'updated data');
+}, [data]);
  
   return (
     <>
+    {/* Global Nav bar */}
     <nav>
         <ul id='navList'>
           <li className='where'>
@@ -41,12 +47,27 @@ fetchData();
         </ul>
       </nav>
      <div>
-      
-      {/* <Routes>
-        <Route path="/" element={<Home data={data} />} />
-        <Route path="/countryDetail" element={<CountryDetail data={data} />} />
-        <Route path="/savedCountries" element={<SavedCountries data={data}/>} />
-      </Routes> */}
+    {/* Routes for App ; passing data into each page*/}
+      <Routes>
+        <Route 
+        path="/" 
+        element={<Home data={data} />} 
+        />
+        <Route 
+        path="/country-detail/:countryName" 
+        element={<CountryDetail 
+        data={data}  
+        savedCountries={savedCountries} 
+        setSavedCountries={setSavedCountries} />}
+         />
+        <Route
+         path="/savedCountries"
+         element={<SavedCountries data={data}
+         allCountries={data} 
+         savedCountries={savedCountries} 
+         setSavedCountries={setSavedCountries}/>} 
+         />
+      </Routes>
     </div>
 
         

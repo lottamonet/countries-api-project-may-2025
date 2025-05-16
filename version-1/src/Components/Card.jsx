@@ -1,10 +1,12 @@
 import React from "react";
+import { Link } from "react-router";
 import '../App.css';
 
-function Card({imageSrc, imageAlt, name, population, region, capital}) {
+function Card({imageSrc, imageAlt, name, population, region, capital,}) {
 
     return (
-        <div className="card">
+        <Link to={`/country-detail/${name}`}>
+             <div className="card">
             <img src={imageSrc} alt={imageAlt} className="flag"/>
             <p className="name">{name}</p>
             <div className="infoContainer">
@@ -13,6 +15,9 @@ function Card({imageSrc, imageAlt, name, population, region, capital}) {
                 <p id="capital">Captital: {capital}</p>
             </div>
         </div>
+        </Link>
+
+       
     )
 }
 
