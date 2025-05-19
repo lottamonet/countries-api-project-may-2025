@@ -12,6 +12,8 @@ function App() {
   const [data, setData] = useState([]);
   // state for saved countries; going to be passed down to the saved countries page via props
   const [savedCountries, setSavedCountries] = useState([]);
+  // light or dark mode
+  const [darkMode, setDarkMode] = useState(false);
 // asynchronous api call
 useEffect(() => {
   async function fetchData() {
@@ -34,7 +36,7 @@ useEffect(() => {
 }, [data]);
  
   return (
-    <>
+    <div className={darkMode ? 'app dark' : 'app'}>
     {/* Global Nav bar */}
     <nav>
         <ul id='navList'>
@@ -46,6 +48,9 @@ useEffect(() => {
           </li>
         </ul>
       </nav>
+      <button onClick={() => setDarkMode(prev => !prev)} className="theme-toggle">
+        {darkMode ? '🌞 Light Mode' : '🌙 Dark Mode'}
+      </button>
      <div>
     {/* Routes for App ; passing data into each page*/}
       <Routes>
@@ -71,7 +76,7 @@ useEffect(() => {
     </div>
 
         
-    </>
+    </div>
   )
 }
 

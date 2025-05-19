@@ -32,8 +32,8 @@ function CountryDetail ({data, savedCountries, setSavedCountries}) {
 
   return (
     <div className="country-detail">
-      <button onClick={handleSave} className="heart-button">❤️ Save Country</button>
-      <CountryCardDetail country={country} allCountries={data} />
+      
+      <CountryCardDetail country={country} allCountries={data} handleSave={handleSave}/>
     </div>
   );
 }

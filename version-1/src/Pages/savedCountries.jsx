@@ -40,7 +40,7 @@ if (matched) {
         <input type="text" name="email" value={form.email} onChange={handleFormChange} placeholder="Email" /><br />
         <input type="text" name="country" value={form.country} onChange={handleFormChange} placeholder="Favorite Country" /><br />
         <input type="text" name="bio" value={form.bio} onChange={handleFormChange} placeholder="Bio" /><br />
-        <button type="submit">Save Profile</button>
+        <button type="submit" className="profile-submit">Submit</button>
       </form>
 
       <h2>Saved Countries:</h2>

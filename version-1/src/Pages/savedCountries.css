@@ -1,6 +1,10 @@
 #root {
     width: 100%;
-    height: 100%;
+    height: 100vh;
+}
+
+body {
+    background-color: '#fafafa';
 }
 
 .form {
@@ -39,6 +43,10 @@
     justify-content: center;
     margin-top: 2rem;
   }
+
+  #savedCountries {
+    margin-left: 1rem;
+  }
   
   .saved-country {
     display: flex;
@@ -58,3 +66,14 @@
     text-align: center;
     font-weight: bold;
   }
+
+  .profile-submit {
+    background-color: #7672CE !important;
+  }
+
+form input , form textarea {
+    background-color: #fff;
+    color: #111517;
+    border: #858585;
+}
+

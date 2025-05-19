@@ -12,7 +12,7 @@ let countriesArray = sortedCountries.map((country, i) => (
 imageSrc={country.flags.png} 
 imageAlt={country.flags.alt}  
 name={country.name.common} 
-population={country.population} 
+population={country.population.toLocaleString()} 
 region={country.region} 
 capital={country.capital} 
 key={i} 

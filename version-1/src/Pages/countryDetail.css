@@ -1,0 +1,21 @@
+.country-detail {
+    text-align: center;
+    margin-top: 5rem;
+  }
+  
+  
+  .heart-button {
+    padding: 0.5rem 1rem;
+    background-color: #ff4757;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+  }
+  
+  .heart-button:hover {
+    background-color: #e84118;
+  }
+
+  

@@ -18,3 +18,28 @@
     height: auto;
     border-radius: 2px;
   }
+
+.detail-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.detail-flag {
+    width: 50%;
+    border-radius: 5px;
+}
+
+.detail-name {
+    font-size: 2rem;
+    font-weight: 700;
+    padding: none;
+    
+}
+
+.detail-infoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
