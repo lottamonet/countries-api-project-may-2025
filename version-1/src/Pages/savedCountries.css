@@ -77,3 +77,7 @@ form input , form textarea {
     border: #858585;
 }
 
+
+.app.dark #savedCountries h1, .app.dark #savedCountries h2 {
+    color: #fff;
+}

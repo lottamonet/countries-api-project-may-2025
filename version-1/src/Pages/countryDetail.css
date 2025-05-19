@@ -18,4 +18,9 @@
     background-color: #e84118;
   }
 
+  .app.dark .infoContainer p {
+    color: #fff;
+}
+
+
   
