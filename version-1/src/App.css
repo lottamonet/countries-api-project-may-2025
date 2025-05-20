@@ -39,7 +39,6 @@ body,
   color: var(--text-color);
   transition: all 0.3s ease;
   height: 100vw;
-  overflow-y: hidden;
 }
 
 .card,
