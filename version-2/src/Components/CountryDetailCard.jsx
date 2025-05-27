@@ -2,7 +2,7 @@ import React from "react";
 import "./CountryCard.css";
 import { Link } from "react-router-dom";
 
-function CountryCardDetail({ country, allCountries, views, handleSave }) {
+function CountryCardDetail({ country, allCountries, views, handleSave, handleRemove }) {
   if (!country || !country.name) {
     return <p>No Country Data Is Available.</p>;
   }

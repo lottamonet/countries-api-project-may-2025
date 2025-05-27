@@ -6,8 +6,10 @@ import "./countryDetail.css";
 
 
 function CountryDetail ({data, savedCountries, setSavedCountries}) {
+  // state for country detail
     const [country, setCountry] = useState({});
     const [viewCount, setViewCount] = useState(0);
+  //checking url to see if the country name parameter exists
     const { countryName } = useParams();
 
     //Filtered country data for country detail page
@@ -20,7 +22,7 @@ function CountryDetail ({data, savedCountries, setSavedCountries}) {
       }
     }, [data, countryName]);
 
-// view count for each country card on detail page
+// view count for each country card on detail page. 
 
 useEffect(() => {
 const incrementView = () => {
@@ -38,7 +40,7 @@ const incrementView = () => {
 };
 incrementView();
 }, [])
-
+// handling function of saved countries
     const handleSave = () => {
      if (!country) return;
      let newCountry = {
@@ -56,12 +58,16 @@ incrementView();
      setSavedCountries(updated);
      localStorage.setItem('savedCountries', JSON.stringify(updated));
     };
+
+    // handling function to removed country from saved list
+
+
     
 
   return (
     <div className="country-detail">
       
-      <CountryCardDetail country={country} allCountries={data} handleSave={handleSave} views={viewCount}/>
+      <CountryCardDetail country={country} allCountries={data} handleSave={handleSave}  views={viewCount}/>
     </div>
   );
 }

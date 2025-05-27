@@ -55,7 +55,7 @@ body {
     color: #fff;
   }
   
-  .saved-country img {
+  .saved-country .flagIcon {
     width: 60px;
     height: auto;
     border-radius: 4px;
@@ -80,4 +80,9 @@ form input , form textarea {
 
 .app.dark #savedCountries h1, .app.dark #savedCountries h2 {
     color: #fff;
+}
+
+.x {
+  padding: 0;
+  align-self: flex-end;
 }
