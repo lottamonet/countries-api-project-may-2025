@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./savedCountries.css";
 import icon from "../assets/x-icon.png"
 
-// On the Saved Countries page, add an “Unsave” button so the user can remove a country from their saved list.
-// 2. Add a “Submit again” button to the Form so the user can re-submit if they’d like to.
-// UNSAVE FEATURE- when a user clicks the X the country is removed from the saved countries list
 
 function SavedCountries({ allCountries = [], savedCountries, setSavedCountries }) {
 //user profile state
